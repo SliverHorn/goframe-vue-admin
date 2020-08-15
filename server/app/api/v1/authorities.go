@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"server/app/api/request"
 	"server/app/api/response"
-	"server/app/model/authorities"
 	"server/app/service"
 	"server/library/global"
 
@@ -94,12 +93,12 @@ func GetAuthorityList(r *ghttp.Request) {
 // SetDataAuthority Set the role resource permissions
 // SetDataAuthority 设置角色资源权限
 func SetDataAuthority(r *ghttp.Request) {
-	var auth authorities.Authorities
+	var auth *request.SetDataAuthority
 	if err := r.Parse(&auth); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	err := service.SetDataAuthority(&auth)
+	err := service.SetDataAuthority(auth)
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("设置关联失败，%v", err))
 		r.Exit()

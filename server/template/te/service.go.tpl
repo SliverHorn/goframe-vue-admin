@@ -55,8 +55,11 @@ func Update{{.StructName}}(update *request.Update{{.StructName}}) (err error) {
 
 // Find{{.StructName}} Gets a single {{.StructName}} based on id
 // Find{{.StructName}} 根据id获取单条{{.StructName}}
-func Find{{.StructName}}(find *request.Find{{.StructName}}) (data *{{.TableName}}.Entity, err error) {
-	return {{.TableName}}.FindOne(g.Map{"id": find.Id})
+func Find{{.StructName}}(find *request.Find{{.StructName}}) (data *{{.TableName}}.{{.StructName}}, err error) {
+    data = (*{{.TableName}}.{{.StructName}})(nil)
+    db := g.DB(global.Db).Table("{{.TableName}}").Safe()
+    err = db.Where(g.Map{"id": find.Id}).Struct(&data)
+    return
 }
 
 // Get{{.StructName}}List Page out the {{.StructName}} list
@@ -64,11 +67,11 @@ func Find{{.StructName}}(find *request.Find{{.StructName}}) (data *{{.TableName}
 {{- range .Fields}}
 	    {{- if .FieldSearchType}}
 	        {{- if eq .FieldType "bool" }}
-func Get{{.StructName}}List(info *request.Get{{.StructName}}List) (list interface{}, total int, err error) {
+func Get{{.StructName}}List(info *request.Get{{.StructName}}List, condition g.Map) (list interface{}, total int, err error) {
             {{- end }}
         {{- end }}
 {{- end }}
-func Get{{.StructName}}List(info *request.Get{{.StructName}}List, condition g.Map) (list interface{}, total int, err error) {
+func Get{{.StructName}}List(info *request.Get{{.StructName}}List) (list interface{}, total int, err error) {
 	datalist := ([]*{{.TableName}}.{{.StructName}})(nil)
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)

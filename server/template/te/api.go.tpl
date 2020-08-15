@@ -73,16 +73,17 @@ func Update{{.StructName}}(r *ghttp.Request) {
 // Find{{.StructName}} Query {{.StructName}} with id
 // Find{{.StructName}} 用id查询{{.StructName}}
 func Find{{.StructName}}(r *ghttp.Request) {
-	var find request.Update{{.StructName}}
+	var find request.FindById
 	if err := r.Parse(&find); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.Update{{.StructName}}(&find); err != nil {
+	data, err := service.Find{{.StructName}}(&find)
+	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("获取失败，%v", err))
 		r.Exit()
 	}
-	global.OkWithMessage(r, "获取成功")
+	global.OkWithData(r, data)
 }
 
 // Get{{.StructName}}List Page out the {{.StructName}} list

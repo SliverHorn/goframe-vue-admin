@@ -313,7 +313,8 @@ export default {
       this.dbform.tableName = "";
     },
     async getColume() {
-      const gormModelList = ["id", "created_at", "updated_at", "deleted_at"];
+      // const gormModelList = ["id", "created_at", "updated_at", "deleted_at"];
+      const gormModelList = [""];
       const res = await getColume(this.dbform);
       if (res.code == 0) {
         const tbHump = toHump(this.dbform.tableName);

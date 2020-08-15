@@ -17,6 +17,8 @@ type Entity struct {
     {{.FieldName}} uint `orm:"{{.ColumnName}},primary" json:"{{.FieldJson}}"` // {{.Comment}}
         {{- else if eq .FieldType "bool" }}
     {{.FieldName}} int `orm:"{{.ColumnName}}" json:"{{.FieldJson}}"` // {{.Comment}}
+        {{- else if eq .FieldType "time.Time" }}
+    {{.FieldName}} *gtime.Time `orm:"{{.ColumnName}}" json:"{{.FieldJson}}"` // {{.Comment}}
         {{- else }}
     {{.FieldName}} {{.FieldType}} `orm:"{{.ColumnName}}" json:"{{.FieldJson}}"` // {{.Comment}}
         {{- end }}

@@ -139,13 +139,13 @@ func GetAuthorityInfo(auth *authorities.Authorities) (err error, sa authorities.
 
 // SetDataAuthority Set role resource permissions
 // SetDataAuthority 设置角色资源权限
-func SetDataAuthority(auth *authorities.Authorities) (err error) {
-	condition := g.Map{
-		"authority_id": auth.AuthorityId,
-		"resources_id": auth.ResourcesId,
-	}
+func SetDataAuthority(auth *request.SetDataAuthority) (err error) {
+	_, err = authority_resources.Delete(g.Map{"authority_id": auth.AuthorityId})
 	for _, v := range auth.DataAuthority {
-		condition["resources_id"] = v.ResourcesId
+		condition := g.Map{
+			"authority_id": auth.AuthorityId,
+			"resources_id": v.AuthorityId,
+		}
 		if _, err = authority_resources.Insert(condition); err != nil {
 			return err
 		}

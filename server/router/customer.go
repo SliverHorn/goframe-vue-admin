@@ -7,7 +7,7 @@ import (
 	"github.com/gogf/gf/frame/g"
 )
 
-// InitCustomerRouter 注册功能api路由
+// InitCustomerRouter 注册客户路由
 func InitCustomerRouter() {
 	CustomerRouter := g.Server().Group("customer").Middleware(
 		middleware.JwtAuth,

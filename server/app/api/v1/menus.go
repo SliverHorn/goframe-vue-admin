@@ -10,14 +10,13 @@ import (
 	"github.com/gogf/gf/frame/g"
 
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/util/gconv"
 )
 
 // GetMenu Gets the user dynamic routing
 // GetMenu 获取用户动态路由
 func GetMenu(r *ghttp.Request) {
-	authorityId := gconv.String(r.GetParam("admin_authority_id"))
-	menus, err := service.GetMenuTree(authorityId)
+	claims := getAdminClaims(r)
+	menus, err := service.GetMenuTree(claims.AdminAuthorityId)
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("获取失败，%v", err))
 		r.Exit()
@@ -101,7 +100,7 @@ func CreateBaseMenu(r *ghttp.Request) {
 		global.FailWithMessage(r, fmt.Sprintf("添加失败，%v", err))
 		r.Exit()
 	}
-	global.FailWithMessage(r, "添加成功")
+	global.OkWithMessage(r, "添加成功")
 }
 
 // DeleteBaseMenu Delete menu

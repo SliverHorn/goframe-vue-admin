@@ -2,7 +2,6 @@ package service
 
 import (
 	"errors"
-	"fmt"
 	"server/app/api/request"
 	"server/app/model"
 	"strings"
@@ -59,7 +58,6 @@ func GetPolicyPathByAuthorityId(authorityId string) (pathMaps []request.CasbinIn
 			Method: v[2],
 		})
 	}
-	fmt.Println(pathMaps)
 	return pathMaps
 }
 

@@ -1,6 +1,8 @@
 package request
 
-import "server/app/model"
+import (
+	"server/app/model"
+)
 
 type CreateAuthority struct {
 	AuthorityId   string `p:"authority_id" v:"required|length:1,1000#请输入角色id|角色id长度为:min到:max位"`
@@ -27,4 +29,14 @@ type Authorities struct {
 type AuthorityCopy struct {
 	Authority      Authorities `json:"authority"`
 	OldAuthorityId string      `r:"oldAuthorityId" json:"oldAuthorityId"`
+}
+
+type SetDataAuthority struct {
+	AuthorityId   string         `r:"authorityId" v:"required|length:1,1000#请输入角色id|角色id长度为:min到:max位"`
+	DataAuthority []*Authorities `r:"dataAuthorityId" json:"dataAuthorityId"`
+}
+
+type Authority struct {
+	AuthorityId   string `r:"authorityId" v:"required|length:1,1000#请输入角色id|角色id长度为:min到:max位"`
+	AuthorityName string `r:"authorityName" v:"required|length:1,1000#请输入角色名|角色名长度为:min到:max位"`
 }

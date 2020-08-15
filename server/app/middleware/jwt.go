@@ -30,11 +30,13 @@ func JwtAuth(r *ghttp.Request) {
 		r.ExitAll()
 	}
 	var claims = gconv.Map(Token.Claims)
-	r.SetParam("admin_uuid", claims["admin_uuid"])
+	r.SetParam("claims", Token.Claims)
 	r.SetParam("admin_authority_id", claims["admin_authority_id"])
-	if !service.ValidatorRedisToken(gconv.String(claims["admin_uuid"]), token) {
-		global.FailWithMessage(r, "Token鉴权失败")
-		r.Exit()
+	if g.Cfg().GetBool("system.UseMultipoint") {
+		if !service.ValidatorRedisToken(gconv.String(claims["admin_uuid"]), token) {
+			global.FailWithMessage(r, "Token鉴权失败")
+			r.Exit()
+		}
 	}
 	r.Middleware.Next()
 }

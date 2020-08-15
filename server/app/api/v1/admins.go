@@ -10,6 +10,8 @@ import (
 	"server/library/global"
 	"server/library/utils"
 
+	"github.com/gogf/gf/frame/g"
+
 	"github.com/gogf/gf/util/gconv"
 
 	"github.com/gogf/gf/net/ghttp"
@@ -23,7 +25,8 @@ func ChangePassword(r *ghttp.Request) {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	c.Uuid = gconv.String(r.GetParam("admin_uuid"))
+	claims := getAdminClaims(r)
+	c.Uuid = claims.AdminUuid
 	if err := service.ChangePassword(&c); err == nil {
 		global.OkWithMessage(r, "修改失败")
 		r.Exit()
@@ -40,7 +43,8 @@ func UploadHeaderImg(r *ghttp.Request) {
 		header   *multipart.FileHeader
 		admin    *admins.Entity
 	)
-	userUuid := gconv.String(r.GetParam("admin_uuid"))
+	claims := getAdminClaims(r)
+	userUuid := claims.AdminUuid
 	if _, header, err = r.Request.FormFile("headerImg"); err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("上传文件失败，%v", err))
 	}
@@ -99,4 +103,15 @@ func DeleteAdmin(r *ghttp.Request) {
 		global.FailWithMessage(r, fmt.Sprintf("删除成功, err:%v", err))
 	}
 	global.OkWithMessage(r, "删除成功")
+}
+
+// getAdminClaims 获取jwt里含有的管理员信息
+func getAdminClaims(r *ghttp.Request) (claims *request.CustomClaims) {
+	claims = new(request.CustomClaims)
+	claimsMap := r.GetParam("claims")
+	if err := gconv.Struct(claimsMap, claims); err != nil {
+		g.Log().Errorf("管理员信息失败!, err:%v", err)
+		r.ExitAll()
+	}
+	return
 }
