@@ -6,19 +6,19 @@ package authorities
 
 import (
 	"database/sql"
+
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/os/gtime"
 )
 
 // Entity is the golang structure for table authorities.
 type Entity struct {
-    AuthorityId   string      `orm:"authority_id,primary" json:"authority_id"`   // 角色ID      
-    AuthorityName string      `orm:"authority_name"       json:"authority_name"` // 角色名      
-    ParentId      string      `orm:"parent_id"            json:"parent_id"`      // 父角色ID    
-    CreateAt      *gtime.Time `orm:"create_at"            json:"create_at"`      // 创建时间    
-    UpdateAt      *gtime.Time `orm:"update_at"            json:"update_at"`      // 更新时间    
-    DeleteAt      *gtime.Time `orm:"delete_at"            json:"delete_at"`      // 删除时间    
-    ResourcesId   string      `orm:"resources_id"         json:"resources_id"`   // 资源权限ID  
+	AuthorityId   string      `orm:"authority_id,primary" json:"authority_id"`   // 角色ID
+	AuthorityName string      `orm:"authority_name"       json:"authority_name"` // 角色名
+	ParentId      string      `orm:"parent_id"            json:"parent_id"`      // 父角色ID
+	CreateAt      *gtime.Time `orm:"create_at"            json:"create_at"`      // 创建时间
+	UpdateAt      *gtime.Time `orm:"update_at"            json:"update_at"`      // 更新时间
+	DeleteAt      *gtime.Time `orm:"delete_at"            json:"delete_at"`      // 删除时间
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers

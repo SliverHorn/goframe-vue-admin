@@ -12,6 +12,7 @@
 server/logs/log/
 server/logs/server/
 server/logs/sql/
+server/dump.rdb
 
 # Log files
 npm-debug.log*

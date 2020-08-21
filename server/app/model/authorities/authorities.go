@@ -11,13 +11,12 @@ import (
 )
 
 type Authorities struct {
-	CreateAt      *gtime.Time    `orm:"create_at"            json:"CreateAt"`                     // 创建时间
-	UpdateAt      *gtime.Time    `orm:"update_at"            json:"UpdateAt"`                     // 更新时间
-	DeleteAt      *gtime.Time    `orm:"delete_at"            json:"DeleteAt"`                     // 删除时间
-	AuthorityId   string         `r:"authorityId"  orm:"authority_id,primary" json:"authorityId"` // 角色ID
-	AuthorityName string         `orm:"authority_name"       json:"authorityName"`                // 角色名
-	ParentId      string         `orm:"parent_id"            json:"parentId"`                     // 父角色ID
-	ResourcesId   string         `r:"dataAuthorityId" orm:"resources_id"         json:"-"`        // 资源权限ID
+	CreateAt      *gtime.Time    `json:"CreateAt"`                     // 创建时间
+	UpdateAt      *gtime.Time    `json:"UpdateAt"`                     // 更新时间
+	DeleteAt      *gtime.Time    `json:"DeleteAt"`                     // 删除时间
+	AuthorityId   string         `json:"authorityId"  r:"authorityId"` // 角色ID
+	AuthorityName string         `json:"authorityName"`                // 角色名
+	ParentId      string         `json:"parentId"`                     // 父角色ID
 	DataAuthority []Authorities  `json:"dataAuthorityId"`
 	Children      []*Authorities `json:"children"`
 	Menus         []menus.Entity `json:"menus"`

@@ -23,11 +23,13 @@ func (m *arModel) RecordNotFound(where ...interface{}) bool {
 type {{.StructName}} struct {
     {{- range .Fields}}
         {{- if eq .FieldName "Id" "ID" }}
-    {{.FieldName}} uint `orm:"{{.ColumnName}},primary" json:"{{.FieldJson}}"` // {{.Comment}}
+    {{.FieldName}} uint `json:"{{.FieldJson}}"` // {{.Comment}}
         {{- else if eq .FieldType "bool" }}
-    {{.FieldName}} int `orm:"{{.ColumnName}}" json:"{{.FieldJson}}"` // {{.Comment}}
+    {{.FieldName}} int `json:"{{.FieldJson}}"` // {{.Comment}}
+        {{- else if eq .FieldType "time.Time" }}
+    {{.FieldName}} *gtime.Time `json:"{{.FieldJson}}"` // {{.Comment}}
         {{- else }}
-    {{.FieldName}} {{.FieldType}} `orm:"{{.ColumnName}}" json:"{{.FieldJson}}"` // {{.Comment}}
+    {{.FieldName}} {{.FieldType}} `json:"{{.FieldJson}}"` // {{.Comment}}
         {{- end }}
     {{- end }}
 }

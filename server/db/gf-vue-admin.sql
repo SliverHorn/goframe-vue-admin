@@ -132,7 +132,6 @@ CREATE TABLE `authorities` (
   `create_at` datetime DEFAULT NULL COMMENT '创建时间',
   `update_at` datetime DEFAULT NULL COMMENT '更新时间',
   `delete_at` datetime DEFAULT NULL COMMENT '删除时间',
-  `resources_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '资源权限ID',
   PRIMARY KEY (`authority_id`) USING BTREE,
   UNIQUE KEY `authority_id` (`authority_id`) USING BTREE,
   KEY `idx_sys_authorities_deleted_at` (`delete_at`) USING BTREE

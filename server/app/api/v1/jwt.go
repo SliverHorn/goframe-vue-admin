@@ -29,8 +29,8 @@ var (
 // 重写此函数以自定义您自己的JWT设置。
 func init() {
 	signingKey := g.Cfg().GetString("jwt.SigningKey")
-	Timeout := g.Cfg().GetDuration("jwt.ExpiresAt") * time.Hour
-	MaxRefresh := g.Cfg().GetDuration("jwt.RefreshAt") * time.Hour
+	Timeout := g.Cfg().GetDuration("jwt.ExpiresAt") * time.Hour * 24
+	MaxRefresh := g.Cfg().GetDuration("jwt.RefreshAt") * time.Hour * 24
 	authMiddleware, err := jwt.New(&jwt.GfJWTMiddleware{
 		Realm:           signingKey,
 		Key:             []byte(signingKey),
@@ -126,6 +126,10 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 // RefreshResponse is used to get a new token no matter current token is expired or not.
 // RefreshResponse 用于获取新令牌，无论当前令牌是否过期。
 func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time) {
+	if service.IsBlacklist(token) {
+		global.Result(r, global.ERROR, g.Map{"reload": true}, "您的帐户异地登陆或令牌失效")
+		r.ExitAll()
+	}
 	Token, err := GfJWTMiddleware.ParseToken(r) // 解析token
 	if err != nil {
 		global.FailWithMessage(r, "Token不正确,更新失败")
@@ -158,6 +162,7 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 		}
 	}
 	global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+	r.ExitAll()
 }
 
 // Authenticator is used to validate login parameters.

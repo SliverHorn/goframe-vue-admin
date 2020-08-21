@@ -61,8 +61,8 @@ func FindAdmin(adminUUID string) (admin *admins.Admin, err error) {
 	admin = (*admins.Admin)(nil)
 	db := g.DB(global.Db).Table("admins").Safe()
 	authorityDb := g.DB(global.Db).Table("authorities").Safe()
-	err = db.Where(g.Map{"uuid": adminUUID}).Struct(admin)
-	err = authorityDb.Where(g.Map{"authority_id": admin.AuthorityId}).Struct(admin.Authority)
+	err = db.Where(g.Map{"uuid": adminUUID}).Struct(&admin)
+	err = authorityDb.Where(g.Map{"authority_id": admin.AuthorityId}).Struct(&admin.Authority)
 	return admin, err
 }
 

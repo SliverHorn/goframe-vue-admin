@@ -8,8 +8,7 @@ import (
 	"server/app/model/authorities"
 	"server/app/model/authority_menu"
 	"server/app/model/authority_resources"
-
-	"github.com/gogf/gf/util/gconv"
+	"server/library/global"
 
 	"github.com/gogf/gf/frame/g"
 )
@@ -34,31 +33,21 @@ func CreateAuthority(create *request.CreateAuthority) (authority *authorities.En
 // CopyAuthority Copy a character
 // CopyAuthority 复制一个角色
 func CopyAuthority(copyInfo *request.AuthorityCopy) (authority *authorities.Authorities, err error) {
-	var (
-		menuList []*model.AuthorityMenu
-		baseMenu []model.BaseMenu
-	)
 	authority = (*authorities.Authorities)(nil)
-	authorityDb := g.DB("default").Table("authorities").Safe()
 	if !authorities.RecordNotFound(g.Map{"authority_id": copyInfo.Authority.AuthorityId}) {
 		return authority, errors.New("存在相同角色id")
 	}
-	info := &request.AuthorityIdInfo{AuthorityId: copyInfo.OldAuthorityId}
-	menuList, err = GetMenuAuthority(info)
-	for _, v := range menuList {
-		v.BaseMenu.Id = gconv.Uint(v.MenuId)
-		baseMenu = append(baseMenu, v.BaseMenu)
-	}
-	copyInfo.Authority.BaseMenu = baseMenu
+	// 创建角色信息
 	_, err = authorities.Insert(g.Map{
 		"authority_id":   copyInfo.Authority.AuthorityId,
 		"authority_name": copyInfo.Authority.AuthorityName,
 		"parent_id":      copyInfo.Authority.ParentId,
 	})
-	paths := GetPolicyPathByAuthorityId(copyInfo.OldAuthorityId)
-	if err = UpdateCasbin(copyInfo.Authority.AuthorityId, paths); err != nil {
-		_ = DeleteAuthority(&request.DeleteAuthority{AuthorityId: copyInfo.Authority.AuthorityId})
-	}
+	// 复制旧角色的api权限
+	err = CopyCasbins(copyInfo)
+	// 复制旧角色的动态菜单
+	err = CopyMenus(copyInfo)
+	authorityDb := g.DB("default").Table("authorities").Safe()
 	err = authorityDb.Where(g.Map{"authority_id": copyInfo.Authority.AuthorityId}).Struct(&authority)
 	return authority, err
 }
@@ -81,6 +70,7 @@ func UpdateAuthority(update *request.UpdateAuthority) (err error) {
 // DeleteAuthority 删除角色
 func DeleteAuthority(auth *request.DeleteAuthority) (err error) {
 	var authority *authorities.Entity
+	db := g.DB(global.Db).Table("`casbin_rule`").Safe()
 	if _, err = admins.FindOne(g.Map{"authority_id": auth.AuthorityId}); err != nil {
 		return errors.New("此角色有用户正在使用禁止删除")
 	}
@@ -95,7 +85,7 @@ func DeleteAuthority(auth *request.DeleteAuthority) (err error) {
 	if _, err = authority_menu.Delete(g.Map{"authority_id": auth.AuthorityId}); err != nil {
 		return errors.New("菜单删除失败")
 	}
-	ClearCasbin(0, auth.AuthorityId)
+	_, err = db.Delete(g.Map{"v0": auth.AuthorityId})
 	return err
 }
 
@@ -161,4 +151,30 @@ func SetMenuAuthority(auth *authorities.Authorities) (err error) {
 	//err := global.GVA_DB.Model(&s).Association("SysBaseMenus").Replace(&auth.SysBaseMenus).Error
 	//return err
 	return
+}
+
+// CopyCasbins Copy role api permissions
+// CopyCasbins 拷贝角色的api权限
+func CopyCasbins(copyInfo *request.AuthorityCopy) (err error) {
+	paths := GetPolicyPathByAuthorityId(copyInfo.OldAuthorityId)
+	if err = UpdateCasbin(copyInfo.Authority.AuthorityId, paths); err != nil {
+		_ = DeleteAuthority(&request.DeleteAuthority{AuthorityId: copyInfo.Authority.AuthorityId})
+	}
+	return
+}
+
+// CopyMenus Copy the dynamic menu of the character
+// CopyMenus 拷贝角色的动态菜单
+func CopyMenus(copyInfo *request.AuthorityCopy) (err error) {
+	var menuList []*model.AuthorityMenu
+	info := &request.AuthorityIdInfo{AuthorityId: copyInfo.OldAuthorityId}
+	menuList, err = GetMenuAuthority(info)
+	for _, v := range menuList {
+		menuId := &v.MenuId
+		_, err = authority_menu.Insert(g.Map{
+			"authority_id": copyInfo.Authority.AuthorityId,
+			"menu_id":      menuId,
+		})
+	}
+	return err
 }
