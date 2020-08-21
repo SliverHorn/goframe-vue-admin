@@ -6,7 +6,7 @@ import (
 	"server/app/api/response"
 	"server/app/service"
 	"server/library/global"
-	"github.com/gogf/gf/frame/g"
+
 	"github.com/gogf/gf/net/ghttp"
 )
 
