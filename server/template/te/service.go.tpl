@@ -13,8 +13,7 @@ import (
 func Create{{.StructName}}(create *request.Create{{.StructName}}) (err error) {
 	insert := {{.TableName}}.Entity{
 	{{- range .Fields}}
-        {{- if eq .FieldName "Id" "ID" "CreateAt" "UpdateAt" "DeleteAt"}}
-        {{ else }}
+        {{- if eq .FieldName "Id" "ID" "CreateAt" "UpdateAt" "DeleteAt"}}{{ else }}
         {{.FieldName}}: create.{{.FieldName}},
         {{- end}}
     {{- end }}
@@ -55,7 +54,7 @@ func Update{{.StructName}}(update *request.Update{{.StructName}}) (err error) {
 
 // Find{{.StructName}} Gets a single {{.StructName}} based on id
 // Find{{.StructName}} 根据id获取单条{{.StructName}}
-func Find{{.StructName}}(find *request.Find{{.StructName}}) (data *{{.TableName}}.{{.StructName}}, err error) {
+func Find{{.StructName}}(find *request.FindById) (data *{{.TableName}}.{{.StructName}}, err error) {
     data = (*{{.TableName}}.{{.StructName}})(nil)
     db := g.DB(global.Db).Table("{{.TableName}}").Safe()
     err = db.Where(g.Map{"id": find.Id}).Struct(&data)
@@ -97,7 +96,14 @@ func Get{{.StructName}}List(info *request.Get{{.StructName}}List) (list interfac
             {{- end }}
         {{- end }}
     {{- end }}
-	total, err = db.Where(condition).Count()
+{{- range .Fields}}
+	    {{- if .FieldSearchType}}
+	        {{- if eq .FieldType "bool" }}
+    total, err = db.Where(condition).Count()
+	        {{- end }}
+        {{- end }}
+{{- end }}
+	total, err = db.Count()
 	err = db.Limit(limit).Offset(offset).Structs(&datalist)
 	return datalist, total, err
 }

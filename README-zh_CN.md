@@ -70,7 +70,7 @@ GoFrame-vue-admin 的成长离不开大家的支持，如果你愿意为 GoFrame
 
 ```bash
 # clone the project
-git clone https://github.com/piexlmax/gin-vue-admin.git
+git clone https://github.com/flipped-aurora/gf-vue-admin.git
 
 # enter the project directory
 cd web

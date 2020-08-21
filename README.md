@@ -73,7 +73,7 @@ The growth of GoFrame-vue-admin is inseparable from everyone's support. If you a
 
 ```bash
 # clone the project
-git clone https://github.com/piexlmax/gin-vue-admin.git
+git clone https://github.com/flipped-aurora/gf-vue-admin.git
 
 # enter the project directory
 cd web

@@ -116,7 +116,11 @@ func MakeFile(fileName string, FileMd5 string) (string, error) {
 		return finishDir + fileName, err
 	}
 	_ = os.MkdirAll(finishDir, os.ModePerm)
-	fd, _ := os.OpenFile(finishDir+fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
+	fd, err := os.OpenFile(finishDir+fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
+	if err != nil {
+		return finishDir + fileName, err
+	}
+	defer fd.Close()
 	for k := range rd {
 		content, _ := ioutil.ReadFile(breakpointDir + FileMd5 + "/" + fileName + "_" + strconv.Itoa(k))
 		_, err = fd.Write(content)
@@ -125,7 +129,6 @@ func MakeFile(fileName string, FileMd5 string) (string, error) {
 			return finishDir + fileName, err
 		}
 	}
-	defer fd.Close()
 	return finishDir + fileName, nil
 }
 

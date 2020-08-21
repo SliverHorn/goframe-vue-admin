@@ -12,6 +12,7 @@
 server/logs/log/
 server/logs/server/
 server/logs/sql/
+dump.rdb
 server/dump.rdb
 
 # Log files
