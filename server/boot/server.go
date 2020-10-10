@@ -16,7 +16,7 @@ func InitializeRunServer() {
 	s.SetWriteTimeout(10 * time.Second)
 	s.SetMaxHeaderBytes(1 << 20)
 	s.SetIndexFolder(true)
-	if g.Cfg().GetString("system.OssType") == "local" {
+	if g.Cfg("system").GetString("system.OssType") == "local" {
 		s.AddStaticPath("/"+g.Cfg("oss").GetString("local.LocalPath"), g.Cfg("oss").GetString("local.LocalPath"))
 	}
 	s.AddStaticPath("/form-generator", "public/page")
