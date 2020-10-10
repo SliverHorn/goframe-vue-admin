@@ -1,6 +1,7 @@
 # HTTP Server
 [server]
 Address = ":8888"
+ServerRoot='public'
 AccessLogEnabled = true
 ErrorLogEnabled = true
 LogPath = "./logs/server"
@@ -19,7 +20,7 @@ Stdout = true
 Host = "127.0.0.1"
 Port = "3306"
 User = "root"
-Pass = "gdkid,,.."
+Pass = "root"
 Name = "gf-vue-admin"
 Type = "mysql"
 Role = ""
