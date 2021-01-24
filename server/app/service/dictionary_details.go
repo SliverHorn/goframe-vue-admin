@@ -23,8 +23,8 @@ func CreateDictionaryDetail(create *request.CreateDictionaryDetail) (err error) 
 	return
 }
 
-// CreateDictionaryDetail create a DictionaryDetail
-// CreateDictionaryDetail 创建一个DictionaryDetail
+// DeleteDictionaryDetail delete a DictionaryDetail
+// DeleteDictionaryDetail 删除一个DictionaryDetail
 func DeleteDictionaryDetail(delete *request.DeleteById) (err error) {
 	_, err = dictionary_details.Delete(g.Map{"id": delete.Id})
 	return err
