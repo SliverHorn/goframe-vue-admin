@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"github.com/qiniu/api.v7/v7/storage"
 )
 

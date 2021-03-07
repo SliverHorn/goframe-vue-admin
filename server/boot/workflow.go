@@ -1,6 +1,6 @@
 package boot
 
-import model "gf-vue-admin/app/model/extra"
+import model "gf-vue-admin/server/app/model/extra"
 
 var Workflow = new(workflow)
 

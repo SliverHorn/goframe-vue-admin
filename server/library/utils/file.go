@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"gf-vue-admin/library/constant"
+	"gf-vue-admin/server/library/constant"
 	"io/ioutil"
 	"os"
 	"strconv"

@@ -1,10 +1,10 @@
 package service
 
 import (
-	"gf-vue-admin/app/api/response"
-	"gf-vue-admin/library/config"
-	"gf-vue-admin/library/global"
-	"gf-vue-admin/library/utils"
+	"gf-vue-admin/server/app/api/response"
+	"gf-vue-admin/server/library/config"
+	"gf-vue-admin/server/library/global"
+	"gf-vue-admin/server/library/utils"
 )
 
 var Config = new(_config)

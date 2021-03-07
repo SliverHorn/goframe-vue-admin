@@ -2,10 +2,10 @@ package service
 
 import (
 	"errors"
-	"gf-vue-admin/app/api/request"
-	model "gf-vue-admin/app/model/extra"
-	"gf-vue-admin/library/global"
-	"gf-vue-admin/library/utils"
+	"gf-vue-admin/server/app/api/request"
+	model "gf-vue-admin/server/app/model/extra"
+	"gf-vue-admin/server/library/global"
+	"gf-vue-admin/server/library/utils"
 	"github.com/gogf/gf/frame/g"
 	"gorm.io/gorm"
 	"io"

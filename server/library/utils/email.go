@@ -3,7 +3,7 @@ package utils
 import (
 	"crypto/tls"
 	"fmt"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"net/smtp"
 	"strings"
 

@@ -1,9 +1,9 @@
 package main
 
-import "gf-vue-admin/boot"
+import "gf-vue-admin/server/boot"
 
 // @title Gf-vue-admin Swagger Docs
-// @version 1.0.0
+// @version 2.4.0
 // @description This is a Gf-vue-admin Server
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header

@@ -2,7 +2,7 @@ package boot
 
 import (
 	"context"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"github.com/go-redis/redis/v8"
 	"github.com/gogf/gf/frame/g"
 )

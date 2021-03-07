@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 )
 

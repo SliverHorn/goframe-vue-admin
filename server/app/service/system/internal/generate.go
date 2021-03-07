@@ -1,8 +1,8 @@
 package internal
 
 import (
-	model "gf-vue-admin/app/model/system"
-	"gf-vue-admin/library/constant"
+	model "gf-vue-admin/server/app/model/system"
+	"gf-vue-admin/server/library/constant"
 	"io/ioutil"
 	"os"
 	"path/filepath"

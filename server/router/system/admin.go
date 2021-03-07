@@ -1,10 +1,10 @@
 package router
 
 import (
-	"gf-vue-admin/app/api/response"
-	api "gf-vue-admin/app/api/system"
-	"gf-vue-admin/interfaces"
-	"gf-vue-admin/router/internal"
+	"gf-vue-admin/server/app/api/response"
+	api "gf-vue-admin/server/app/api/system"
+	"gf-vue-admin/server/interfaces"
+	"gf-vue-admin/server/router/internal"
 	"github.com/gogf/gf/net/ghttp"
 )
 

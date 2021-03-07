@@ -1,6 +1,6 @@
 package request
 
-import system "gf-vue-admin/app/model/system"
+import system "gf-vue-admin/server/app/model/system"
 
 type ExcelInfo struct {
 	FileName string        `json:"fileName"`

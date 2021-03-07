@@ -1,6 +1,6 @@
 package model
 
-import "gf-vue-admin/library/global"
+import "gf-vue-admin/server/library/global"
 
 // 如果含有time.Time 请自行import time包
 type {{.StructName}} struct {

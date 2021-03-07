@@ -1,9 +1,9 @@
 package router
 
 import (
-	extra "gf-vue-admin/router/extra"
-	"gf-vue-admin/router/internal"
-	system "gf-vue-admin/router/system"
+	extra "gf-vue-admin/server/router/extra"
+	"gf-vue-admin/server/router/internal"
+	system "gf-vue-admin/server/router/system"
 	"github.com/gogf/gf/frame/g"
 )
 

@@ -1,9 +1,9 @@
 package router
 
 import (
-	api "gf-vue-admin/app/api/extra"
-	"gf-vue-admin/app/api/response"
-	"gf-vue-admin/interfaces"
+	api "gf-vue-admin/server/app/api/extra"
+	"gf-vue-admin/server/app/api/response"
+	"gf-vue-admin/server/interfaces"
 	"github.com/gogf/gf/net/ghttp"
 )
 

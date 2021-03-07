@@ -2,12 +2,12 @@ package gfva
 
 import (
 	"fmt"
-	extra "gf-vue-admin/app/model/extra"
-	system "gf-vue-admin/app/model/system"
-	extraSystem "gf-vue-admin/cmd/information/extra"
-	dataSystem "gf-vue-admin/cmd/information/system"
-	"gf-vue-admin/integration/gdbadapter"
-	"gf-vue-admin/library/global"
+	extra "gf-vue-admin/server/app/model/extra"
+	system "gf-vue-admin/server/app/model/system"
+	extraSystem "gf-vue-admin/server/cmd/information/extra"
+	dataSystem "gf-vue-admin/server/cmd/information/system"
+	"gf-vue-admin/server/integration/gdbadapter"
+	"gf-vue-admin/server/library/global"
 	"github.com/gookit/color"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

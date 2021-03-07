@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gf-vue-admin/app/api/response"
-	"gf-vue-admin/integration"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/app/api/response"
+	"gf-vue-admin/server/integration"
+	"gf-vue-admin/server/library/global"
 	"github.com/mojocn/base64Captcha"
 )
 

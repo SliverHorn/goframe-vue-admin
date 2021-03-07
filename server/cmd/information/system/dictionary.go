@@ -1,8 +1,8 @@
 package information
 
 import (
-	model "gf-vue-admin/app/model/system"
-	"gf-vue-admin/library/global"
+	model "gf-vue-admin/server/app/model/system"
+	"gf-vue-admin/server/library/global"
 	"github.com/gookit/color"
 	"gorm.io/gorm"
 	"time"

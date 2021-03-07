@@ -2,7 +2,7 @@ package integration
 
 import (
 	"context"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 	"github.com/mojocn/base64Captcha"
 	"time"

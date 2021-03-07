@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"gf-vue-admin/app/api/request"
+	"gf-vue-admin/server/app/api/request"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/util/gconv"

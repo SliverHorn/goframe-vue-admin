@@ -16,15 +16,15 @@ limitations under the License.
 package gfva
 
 import (
-	"gf-vue-admin/boot"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/boot"
+	"gf-vue-admin/server/library/global"
 	"github.com/spf13/cobra"
 )
 
 // initdbCmd represents the initdb command
 var initdbCmd = &cobra.Command{
 	Use:   "initdb",
-	Short: "gf-vue-admin初始化数据",
+	Short: "gf-vue-admin/server初始化数据",
 	Long:  `gf-vue-admin初始化数据适配数据库情况: 1. mysql完美适配, 2. postgresql未适配, 3. sqlite未适配, 4. sqlserver未适配`,
 	Run: func(cmd *cobra.Command, args []string) {
 		frame, _ := cmd.Flags().GetString("frame")

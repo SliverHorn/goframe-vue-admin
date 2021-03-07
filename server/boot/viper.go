@@ -3,8 +3,8 @@ package boot
 import (
 	"flag"
 	"fmt"
-	"gf-vue-admin/library/constant"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/constant"
+	"gf-vue-admin/server/library/global"
 	"github.com/fsnotify/fsnotify"
 	"github.com/gogf/gf/frame/g"
 	"github.com/spf13/viper"

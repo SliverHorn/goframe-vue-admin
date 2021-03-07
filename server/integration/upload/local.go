@@ -1,8 +1,8 @@
 package upload
 
 import (
-	"gf-vue-admin/library/global"
-	"gf-vue-admin/library/utils"
+	"gf-vue-admin/server/library/global"
+	"gf-vue-admin/server/library/utils"
 	"io"
 	"mime/multipart"
 	"os"

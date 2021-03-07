@@ -1,8 +1,8 @@
 package upload
 
 import (
-	"gf-vue-admin/integration/upload/internal"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/integration/upload/internal"
+	"gf-vue-admin/server/library/global"
 	"mime/multipart"
 
 	"github.com/gogf/gf/frame/g"

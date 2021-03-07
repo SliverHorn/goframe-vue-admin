@@ -1,7 +1,7 @@
 package model
 
 import (
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/library/global"
 	"golang.org/x/crypto/bcrypt"
 )
 

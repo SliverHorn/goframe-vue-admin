@@ -1,7 +1,7 @@
 package request
 
 import (
-	model "gf-vue-admin/app/model/system"
+	model "gf-vue-admin/server/app/model/system"
 	uuid "github.com/satori/go.uuid"
 )
 

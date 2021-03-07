@@ -2,11 +2,11 @@ package boot
 
 import (
 	"database/sql"
-	extra "gf-vue-admin/app/model/extra"
-	system "gf-vue-admin/app/model/system"
-	"gf-vue-admin/boot/internal"
-	"gf-vue-admin/library/config"
-	"gf-vue-admin/library/global"
+	extra "gf-vue-admin/server/app/model/extra"
+	system "gf-vue-admin/server/app/model/system"
+	"gf-vue-admin/server/boot/internal"
+	"gf-vue-admin/server/library/config"
+	"gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

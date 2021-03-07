@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gf-vue-admin/app/api/request"
-	model "gf-vue-admin/app/model/system"
-	"gf-vue-admin/app/service/system/internal"
+	"gf-vue-admin/server/app/api/request"
+	model "gf-vue-admin/server/app/model/system"
+	"gf-vue-admin/server/app/service/system/internal"
 	"github.com/gogf/gf/frame/g"
 )
 

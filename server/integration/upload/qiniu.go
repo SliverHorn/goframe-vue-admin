@@ -3,8 +3,8 @@ package upload
 import (
 	"context"
 	"fmt"
-	"gf-vue-admin/integration/upload/internal"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/integration/upload/internal"
+	"gf-vue-admin/server/library/global"
 	"mime/multipart"
 	"time"
 

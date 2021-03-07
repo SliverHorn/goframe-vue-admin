@@ -1,11 +1,11 @@
 package api
 
 import (
-	"gf-vue-admin/app/api/request"
-	"gf-vue-admin/app/api/response"
-	service "gf-vue-admin/app/service/extra"
-	"gf-vue-admin/library/constant"
-	"gf-vue-admin/library/utils"
+	"gf-vue-admin/server/app/api/request"
+	"gf-vue-admin/server/app/api/response"
+	service "gf-vue-admin/server/app/service/extra"
+	"gf-vue-admin/server/library/constant"
+	"gf-vue-admin/server/library/utils"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"net/url"

@@ -1,9 +1,9 @@
 package router
 
 import (
-	"gf-vue-admin/app/api/response"
-	api "gf-vue-admin/app/api/system"
-	"gf-vue-admin/interfaces"
+	"gf-vue-admin/server/app/api/response"
+	api "gf-vue-admin/server/app/api/system"
+	"gf-vue-admin/server/interfaces"
 	"github.com/gogf/gf/net/ghttp"
 )
 
@@ -22,4 +22,11 @@ func (b *base) Init() {
 		group.POST("captcha", b.response.Handler()(api.Base.Captcha))
 		group.POST("login", api.GfJWTMiddleware.LoginHandler) // 登录
 	}
+
+	db :=  b.router.Group("/init")
+	{
+		db.POST("initdb", b.response.Handler()(api.Base.Captcha))
+		db.POST("checkdb", api.GfJWTMiddleware.LoginHandler) // 登录
+	}
+
 }

@@ -1,8 +1,8 @@
 package upload
 
 import (
-	"gf-vue-admin/interfaces"
-	"gf-vue-admin/library/global"
+	"gf-vue-admin/server/interfaces"
+	"gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 )
 
