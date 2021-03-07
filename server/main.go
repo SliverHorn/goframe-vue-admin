@@ -1,6 +1,6 @@
 package main
 
-import "gf-vue-admin/server/boot"
+import "github.com/flipped-aurora/gf-vue-admin/server/boot"
 
 // @title Gf-vue-admin Swagger Docs
 // @version 2.4.0

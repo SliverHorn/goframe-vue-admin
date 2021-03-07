@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "This is a Gf-vue-admin Server",
-        "title": "gf-vue-admin/server Swagger Docs",
+        "title": "github.com/flipped-aurora/gf-vue-admin/server Swagger Docs",
         "contact": {},
         "version": "1.0.0"
     },

@@ -3,7 +3,7 @@ package internal
 import (
 	"context"
 	"fmt"
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

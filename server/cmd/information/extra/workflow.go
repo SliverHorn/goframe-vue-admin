@@ -1,8 +1,8 @@
 package information
 
 import (
-	model "gf-vue-admin/server/app/model/extra"
-	"gf-vue-admin/server/library/global"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/gookit/color"
 	"gorm.io/gorm"
 	"time"

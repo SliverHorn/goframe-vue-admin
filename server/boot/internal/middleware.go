@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"gf-vue-admin/server/app/api/response"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )

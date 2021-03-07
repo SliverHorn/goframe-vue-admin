@@ -3,10 +3,10 @@ package service
 import (
 	"database/sql"
 	"errors"
-	"gf-vue-admin/server/app/api/request"
-	"gf-vue-admin/server/app/api/response"
-	model "gf-vue-admin/server/app/model/system"
-	"gf-vue-admin/server/app/service/system/internal"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/request"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/service/system/internal"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
 )

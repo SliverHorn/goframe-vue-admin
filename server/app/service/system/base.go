@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gf-vue-admin/server/app/api/response"
-	"gf-vue-admin/server/integration"
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	"github.com/flipped-aurora/gf-vue-admin/server/integration"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/mojocn/base64Captcha"
 )
 

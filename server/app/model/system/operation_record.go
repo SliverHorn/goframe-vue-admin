@@ -1,7 +1,7 @@
 package model
 
 import (
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 )
 
 type OperationRecord struct {

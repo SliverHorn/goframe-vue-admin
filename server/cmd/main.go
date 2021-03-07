@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "gf-vue-admin/server/cmd/gfva"
+import "github.com/flipped-aurora/gf-vue-admin/server/cmd/gfva"
 
 func main() {
 	gfva.Execute()

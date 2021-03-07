@@ -2,9 +2,9 @@ package api
 
 import (
 	"errors"
-	"gf-vue-admin/server/app/api/response"
-	service "gf-vue-admin/server/app/service/system"
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	service "github.com/flipped-aurora/gf-vue-admin/server/app/service/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )

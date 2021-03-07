@@ -1,8 +1,8 @@
 package service
 
 import (
-	"gf-vue-admin/server/app/api/request"
-	"gf-vue-admin/server/app/model"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/request"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/model"
 	"github.com/gogf/gf/frame/g"
 )
 

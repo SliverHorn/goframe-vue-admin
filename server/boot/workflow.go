@@ -1,6 +1,6 @@
 package boot
 
-import model "gf-vue-admin/server/app/model/extra"
+import model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
 
 var Workflow = new(workflow)
 

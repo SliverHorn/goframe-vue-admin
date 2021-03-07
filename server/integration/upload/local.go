@@ -1,8 +1,8 @@
 package upload
 
 import (
-	"gf-vue-admin/server/library/global"
-	"gf-vue-admin/server/library/utils"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/utils"
 	"io"
 	"mime/multipart"
 	"os"

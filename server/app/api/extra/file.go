@@ -1,10 +1,10 @@
 package api
 
 import (
-	"gf-vue-admin/server/app/api/request"
-	"gf-vue-admin/server/app/api/response"
-	model "gf-vue-admin/server/app/model/extra"
-	service "gf-vue-admin/server/app/service/extra"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/request"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
+	service "github.com/flipped-aurora/gf-vue-admin/server/app/service/extra"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"mime/multipart"

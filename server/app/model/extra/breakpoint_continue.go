@@ -1,6 +1,6 @@
 package model
 
-import "gf-vue-admin/server/library/global"
+import "github.com/flipped-aurora/gf-vue-admin/server/library/global"
 
 //@author: [SliverHorn](https://github.com/SliverHorn)
 //@description: 文件结构体

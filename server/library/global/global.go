@@ -3,7 +3,7 @@ package global
 import (
 	"database/sql"
 	"database/sql/driver"
-	"gf-vue-admin/server/library/config"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/config"
 	"github.com/go-redis/redis/v8"
 	"github.com/gogf/gf/os/gtime"
 	"github.com/spf13/viper"

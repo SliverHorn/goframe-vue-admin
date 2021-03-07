@@ -1,7 +1,7 @@
 package request
 
 import (
-	model "gf-vue-admin/server/app/model/extra"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
 )
 
 type Upload struct {

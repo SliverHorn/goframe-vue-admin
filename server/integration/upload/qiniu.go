@@ -3,8 +3,8 @@ package upload
 import (
 	"context"
 	"fmt"
-	"gf-vue-admin/server/integration/upload/internal"
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/integration/upload/internal"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"mime/multipart"
 	"time"
 

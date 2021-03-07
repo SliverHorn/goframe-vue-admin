@@ -1,11 +1,11 @@
 package service
 
 import (
-	"gf-vue-admin/server/app/api/request"
-	"gf-vue-admin/server/app/api/response"
-	model "gf-vue-admin/server/app/model/system"
-	gdbadapter "gf-vue-admin/server/integration/gdbadapter"
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/request"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	gdbadapter "github.com/flipped-aurora/gf-vue-admin/server/integration/gdbadapter"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/util"
 	"github.com/gogf/gf/frame/g"

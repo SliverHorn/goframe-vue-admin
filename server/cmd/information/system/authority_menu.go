@@ -1,7 +1,7 @@
 package information
 
 import (
-	"gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/gookit/color"
 )
 

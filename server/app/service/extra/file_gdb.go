@@ -2,9 +2,9 @@ package service
 
 import (
 	"errors"
-	"gf-vue-admin/server/app/api/request"
-	model "gf-vue-admin/server/app/model/extra"
-	"gf-vue-admin/server/integration/upload"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/request"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
+	"github.com/flipped-aurora/gf-vue-admin/server/integration/upload"
 	"github.com/gogf/gf/frame/g"
 	"mime/multipart"
 	"strings"

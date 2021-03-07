@@ -3,9 +3,9 @@ package service
 import (
 	"errors"
 	"fmt"
-	model "gf-vue-admin/server/app/model/system"
-	"gf-vue-admin/server/library/constant"
-	"gf-vue-admin/server/library/global"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/constant"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/360EntSecGroup-Skylar/excelize/v2"
 	"reflect"
 	"strconv"

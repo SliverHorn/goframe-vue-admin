@@ -1,6 +1,6 @@
 package model
 
-import "gf-vue-admin/server/library/global"
+import "github.com/flipped-aurora/gf-vue-admin/server/library/global"
 
 type Api struct {
 	global.Model

@@ -1,4 +1,4 @@
-BINARY="gf-vue-admin/server"
+BINARY="github.com/flipped-aurora/gf-vue-admin/server"
 GFVA = "gfva"
 
 all: check gfva run

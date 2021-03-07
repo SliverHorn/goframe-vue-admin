@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	model "gf-vue-admin/server/app/model/system"
-	"gf-vue-admin/server/library/global"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
 	"github.com/gogf/gf/frame/g"
 	"time"
 )

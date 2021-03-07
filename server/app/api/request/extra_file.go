@@ -1,6 +1,6 @@
 package request
 
-import model "gf-vue-admin/server/app/model/extra"
+import model "github.com/flipped-aurora/gf-vue-admin/server/app/model/extra"
 
 type BaseFile struct {
 	Url  string `json:"url" gorm:"comment:文件地址"`

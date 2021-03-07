@@ -1,7 +1,7 @@
 package internal
 
 import (
-	model "gf-vue-admin/server/app/model/system"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
 	"github.com/gogf/gf/frame/g"
 	"strconv"
 )

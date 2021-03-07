@@ -1,8 +1,8 @@
 package internal
 
 import (
-	model "gf-vue-admin/server/app/model/system"
-	"gf-vue-admin/server/library/constant"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/constant"
 	"io/ioutil"
 	"os"
 	"path/filepath"

@@ -3,9 +3,9 @@ package api
 import (
 	"errors"
 	"fmt"
-	"gf-vue-admin/server/app/api/response"
-	model "gf-vue-admin/server/app/model/system"
-	service "gf-vue-admin/server/app/service/system"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	model "github.com/flipped-aurora/gf-vue-admin/server/app/model/system"
+	service "github.com/flipped-aurora/gf-vue-admin/server/app/service/system"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"net/url"

@@ -1,9 +1,9 @@
 package router
 
 import (
-	extra "gf-vue-admin/server/router/extra"
-	"gf-vue-admin/server/router/internal"
-	system "gf-vue-admin/server/router/system"
+	extra "github.com/flipped-aurora/gf-vue-admin/server/router/extra"
+	"github.com/flipped-aurora/gf-vue-admin/server/router/internal"
+	system "github.com/flipped-aurora/gf-vue-admin/server/router/system"
 	"github.com/gogf/gf/frame/g"
 )
 

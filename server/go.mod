@@ -1,4 +1,4 @@
-module gf-vue-admin/server
+module github.com/flipped-aurora/gf-vue-admin/server
 
 go 1.16
 

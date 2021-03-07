@@ -1,9 +1,9 @@
 package router
 
 import (
-	"gf-vue-admin/server/app/api"
-	"gf-vue-admin/server/app/api/response"
-	"gf-vue-admin/server/interfaces"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	"github.com/flipped-aurora/gf-vue-admin/server/interfaces"
 	"github.com/gogf/gf/net/ghttp"
 )
 

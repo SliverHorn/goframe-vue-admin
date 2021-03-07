@@ -1,10 +1,10 @@
 package service
 
 import (
-	"gf-vue-admin/server/app/api/response"
-	"gf-vue-admin/server/library/config"
-	"gf-vue-admin/server/library/global"
-	"gf-vue-admin/server/library/utils"
+	"github.com/flipped-aurora/gf-vue-admin/server/app/api/response"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/config"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/global"
+	"github.com/flipped-aurora/gf-vue-admin/server/library/utils"
 )
 
 var Config = new(_config)
