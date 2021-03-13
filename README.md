@@ -1,3 +1,7 @@
+# 公告
+各位gf-vue-admin的使用者， 本项目今年会完成升级架构，也会跟着goframe的版本节奏，由面向对象的写法切换到面向接口的写法
+各位敬请期待！
+
 <div align=center>
 <img src="./docs/gf-vue-admin-logo.png" width=300" height="300" />
 </div>
@@ -97,39 +101,10 @@ go build
 
 ### 2.3 swagger自动化API文档
 
-#### 2.3.1 安装 swagger
+- 去掉swagger的原因
+	- 注释多余代码,导致代码臃肿
+	- 推荐替代工具apipost
 
-- 可以翻墙
-````
-go get -u github.com/swaggo/swag/cmd/swag
-````
-
-- 无法翻墙
-  由于国内没法安装 go.org/x 包下面的东西，推荐使用 [goproxy.io](https://goproxy.io/zh/) 或者 [goproxy.cn/](https://goproxy.cn/)
-
-```bash
-# 如果您使用的 Go 版本是 1.13 及以上(推荐)
-# 启用 Go Modules 功能
-go env -w GO111MODULE=on 
-# 配置 GOPROXY 环境变量
-go env -w GOPROXY=https://goproxy.io,direct
-
-# 使用如下命令下载swag
-go get -v github.com/swaggo/swag/cmd/swag
-```
-
-#### 2.3.2 下载gf工具集
-
-[下载教程](https://goframe.org/pages/viewpage.action?pageId=1114260)
-
-#### 2.3.3 生成API文档
-
-````
-cd server
-gf swagger
-````
-
-执行上面的命令后，server目录下会出现docs文件夹，打开浏览器输入 [http://localhost:8888/swaggerl](http://localhost:8888/swagger)，即可查看swagger文档
 
 ## 3. 技术选型
 
